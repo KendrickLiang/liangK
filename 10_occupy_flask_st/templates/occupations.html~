@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <title> {{Title}} </title>
+  <h2>
+    {{Heading}}
+  </h2>
+  <body>
+    <table>
+      <tr>
+	<th> {{ col1 }} </th>
+	<th> {{ col2 }} </th>
+      </tr>
+      {% for key, value in result.items() %}
+      <tr>
+        <td> {{ key }} </td>
+        <td> {{ value }} </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
