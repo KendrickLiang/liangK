@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>
+      LOGIN FAILURE
+    </title>
+  </head>
+  <body>
+	ERROR ERROR ERROR
+	
+	What went wrong: <br>
+{% set msgs = get_flashed_messages() %}
+	{% for each in msgs %}
+		{{each}}
+		<br>
+	{% endfor %}
+  </body>
+</html>
