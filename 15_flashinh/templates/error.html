@@ -1,18 +1,18 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title>
-      LOGIN FAILURE
-    </title>
-  </head>
-  <body>
+{% extends "page.html" %}
+
+{% block title %} ERROR ERROR {% endblock %}
+
+{% block content %}
 	ERROR ERROR ERROR
-	
-	What went wrong: <br>
-{% set msgs = get_flashed_messages() %}
+	<br>
+	What went wrong: 
+	<br>
+	You had a
+	{% set msgs= get_flashed_messages() %}
 	{% for each in msgs %}
-		{{each}}
-		<br>
+	{{each}}
+	<br>
 	{% endfor %}
-  </body>
-</html>
+	<form action = "/logout" method= "post" >
+	<input type="submit" value ="Try Again">
+{% endblock %}

@@ -1,15 +1,11 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title>
-      Welcome!
-    </title>
-  </head>
-  <body>
+{% extends "page.html" %}
+
+{% block title %} Welcome {% endblock %}
+
+{% block content %}
 	LOGIN SUCCESSFUL
 	Welcome to this page.
-	Hello User :{{user}}
+	Hello User : {{user}}
 	<form action = "/logout" method= "post" >
 	<input type="submit" value ="LogOut">
-  </body>
-</html>
+{% endblock %}

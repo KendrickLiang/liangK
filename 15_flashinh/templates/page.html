@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Yes </title>
+    {% block head %}
+	<title> 
+		{% block title %}Login {% endblock %}
+		-|- BlueRainbow
+	</title>
+	{% endblock %}
   </head>
   <body>
-	<header> Greetings Being </header>
+	{% block content %}
+		<header> Greetings Being </header>
     <form action = "/auth" method= "post" >
       Username: <input type = "text" name = "username"> <br>
 	  Password: <input type = "text" name = "password"> <br>
       <input type="submit">
+	
+	{% endblock %}
+	<br>
+	<br>
+	<br>
+	{% block footer %}
+	&copy; Copyright BlueRainbow 2018
+	(This is a footer!)
+	{% endblock %}
+	
   </body>
 </html>
