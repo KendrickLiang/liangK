@@ -4,7 +4,7 @@
 #2018-10-01
 import os
 
-from flask import Flask, render_template, request, url_for, redirect, session
+from flask import Flask, flash, render_template, request, url_for, redirect, session
 app = Flask(__name__)
 
 app.secret_key = os.urandom(32)#Generate random key to assign to secret_key
@@ -37,6 +37,7 @@ def woah():
 			message = "bad password"#if wrong password
 		else:
 			message = "bad juju"
+		flash(message)
 		return render_template("error.html",
 								error = message)#go to error page
 
