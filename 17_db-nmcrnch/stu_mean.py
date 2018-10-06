@@ -13,9 +13,14 @@ def process_data():
             grades[row[0]] = [row[1]]
         else:
             grades[row[0]].append(row[1])
-def calculate_averages():
+    for row in data:
+        grades[row[0]] = calculate_averages(grades[row[0]])
+def calculate_averages(scores):
     counter = 0
-    for person in grades:
-        
+    total = 0
+    for score in scores:
+        total += score
+        counter += 1
+    return total/score
 print(grades)
         
