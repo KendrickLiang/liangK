@@ -1,3 +1,19 @@
 from flask import Flask
-import urllib, json
-https://api.nasa.gov/planetary/apod?api_key=fYy5NFLdYdpo4Vp8MjgWUHVZdXzka19nk6nIAPKB
+from flask import request
+from flask import render_template
+import urllib
+import json
+
+app = Flask(__name__)
+@app.route("/")
+def start():
+    enter = urllib.request.urlopen("https://api.nasa.gov/planetary/apod?api_key=fYy5NFLdYdpo4Vp8MjgWUHVZdXzka19nk6nIAPKB&date=2018-04-15")
+    display = enter.read()
+    print (display)
+    data=json.loads(display)
+    return render_template("index.html", pic=data['url'], explanation = data['explanation'])
+
+
+if __name__ == "__main__":
+    app.debug = True
+    app.run()
