@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>REST API Demos</title>    
+  </head>
+  
+  <body>
+    <h1>Cheese</h1>
+    <p> {{ food }} </p>
+    <h1>Best stream</h1>
+    <iframe
+       src="https://player.twitch.tv/?channel={{image}}"
+       height="720"
+       width="1280"
+       frameborder="0"
+       scrolling="no"
+       allowfullscreen="true">
+    </iframe>
+    <h2>Sample Metadata:</h2>
+    {% for d in l%}
+    <table border="1">
+      {% for key in d['meta'] %}
+      <tr>
+        <td>{{key}}</td> <td>{{d['meta'][key]}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br>
+    {% endfor %}
+  </body>
+</html>
