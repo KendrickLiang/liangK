@@ -4,7 +4,7 @@
 //2018-12-18
 
 var fib = function(n){
-    if( n < 2){
+    if(n < 2){
 	return n;
     }
     else{
@@ -25,3 +25,6 @@ var gcd = function(a, b){
 var randomStudent = function(a){
     return a[Math.floor(Math.random() * a.length)]
 }
+var runfib = document.getElementById("fib")
+runfib.addEventListener('click',fib)
+console.log(runfib)
